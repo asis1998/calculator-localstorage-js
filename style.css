@@ -1,0 +1,150 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+*{
+  box-sizing: border-box;
+}
+
+.wrapper{
+  background: linear-gradient(green,yellow,red,blue,pink);
+ 
+ min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator{
+  background: grey;
+  padding:2rem 1.5rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-areas: 
+"result result result result"
+"ac c modular divide"
+"btn7 btn8 btn9 multiply"
+"btn4 btn5 btn6 plus"
+"btn1 btn2 btn3 minus"
+"btn0 dot equal equal";
+gap: 10px;
+
+transform: perspective(70rem) rotateX(30deg);
+animation: moving 1s;
+  
+}
+.result{
+  background: lightgreen;
+  padding: 2rem 1.5rem;
+  text-align: right;
+  grid-area: result;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.btn{
+  background: yellow;
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.btn:hover{
+  background: lightgreen;
+  cursor: pointer;
+}
+.btn:active{
+  background:rgba(144, 238, 144, 0.569);
+}
+
+
+.btn-ac{
+  grid-area:ac;
+}
+.btn-c{
+  grid-area:c;
+}
+.btn-modular{
+  grid-area:modular;
+}
+.btn-divide{
+  grid-area:divide;
+}
+.btn-btn7{
+  grid-area:btn7;
+}
+.btn-btn8{
+  grid-area:btn8;
+}
+.btn-btn9{
+  grid-area:btn9;
+}
+.btn-multiply{
+  grid-area:multiply;
+}
+.btn-btn4{
+  grid-area:btn4;
+}
+.btn-btn5{
+  grid-area:btn5;
+}
+.btn-btn6{
+  grid-area:btn6;
+}
+.btn-plus{
+  grid-area:plus;
+}
+.btn-btn1{
+  grid-area:btn1;
+}
+.btn-btn2{
+  grid-area:btn2;
+}
+.btn-btn3{
+  grid-area:btn3;
+}
+.btn-minus{
+  grid-area:minus;
+}
+.btn-btn0{
+  grid-area:btn0;
+}
+.btn-dot{
+  grid-area:dot;
+}
+.btn-equal{
+  grid-area:equal;
+}
+
+.prank{
+  background: red;
+  animation: shake 0.9s;
+}
+
+@keyframes shake {
+  0%{
+      transform: translateX(10px);
+  }
+  50%{
+      transform: translateX(-10px);
+  }
+  80%{
+    transform: translateX(10px);
+  }
+ 100%{
+  transform: translateX(-10px);
+  }
+}
+
+
+@keyframes moving {
+  0%{
+    transform: perspective(10rem) rotateX(30deg);
+  }
+  100%{
+    transform: perspective(70rem) rotateX(30deg);
+  }
+}
+
