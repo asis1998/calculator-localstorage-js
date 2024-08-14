@@ -1,10 +1,12 @@
 const allBtnElm = document.querySelectorAll(".btn");
+let displayElm=document.querySelector(".result")
 let numberValue = JSON.parse(localStorage.getItem("total")) || "";
 document.querySelector(".result").innerHTML = numberValue;
 let lastOperator =  "";
 let operator=["+","-","*","/","%"]
 allBtnElm.forEach((btn) => {
     btn.addEventListener("click", (e) => {
+        displayElm.classList.remove("prank");
         let value = e.target.innerHTML;
         let lastChr = numberValue[numberValue.length - 1];
 
@@ -17,6 +19,7 @@ allBtnElm.forEach((btn) => {
             return display(numberValue);
         }
         if (value === "=") {
+            prank();
             if (operator.includes(lastChr)) {
                 
                 numberValue = numberValue.slice(0, -1);
@@ -55,4 +58,15 @@ allBtnElm.forEach((btn) => {
 
 const display = () => {
     document.querySelector(".result").innerHTML = numberValue;
+}
+
+
+const prank = () => {
+    randomNum = Math.floor(Math.random() * 10);
+    console.log(randomNum);
+    if (randomNum < 4) {
+        displayElm.classList.add("prank");
+        let audio = new Audio("aa.wav");
+        audio.play();
+    }
 }
